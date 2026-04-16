@@ -65,7 +65,7 @@ export default function ChatScreen() {
   };
 
   return (
-    <div className="flex h-screen w-full bg-[radial-gradient(circle_at_50%_50%,#0a0a1a_0%,#000_100%)] text-white font-sans animate-in fade-in duration-1000 overflow-hidden relative">
+    <div className="flex h-screen w-full bg-black text-white font-sans animate-in fade-in duration-1000 overflow-hidden relative">
       {/* background elements */}
       <div className="absolute top-[100px] left-[200px] w-[150px] h-[2px] bg-gradient-to-r from-white/80 to-transparent -rotate-45 opacity-60 pointer-events-none"></div>
       <div className="absolute top-[400px] left-[700px] w-[150px] h-[2px] bg-gradient-to-r from-white/80 to-transparent -rotate-45 opacity-60 pointer-events-none"></div>
