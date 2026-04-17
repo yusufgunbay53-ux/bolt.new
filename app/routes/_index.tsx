@@ -1,4 +1,4 @@
-import { json, type MetaFunction } from '@remix-run/cloudflare';
+import { json, type MetaFunction } from '@remix-run/node';
 import { ClientOnly } from 'remix-utils/client-only';
 import ChatScreen from '~/components/ChatScreen';
 
@@ -9,13 +9,17 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export const loader = () => json({});
+export const loader = () => {
+  return json({});
+};
 
 export default function Index() {
   return (
     <ClientOnly
       fallback={
-        <div className="flex h-screen w-full bg-black items-center justify-center text-white">Yükleniyor...</div>
+        <div className="flex h-screen w-full bg-black items-center justify-center text-white">
+          <div className="animate-pulse">ANOX Yükleniyor...</div>
+        </div>
       }
     >
       {() => <ChatScreen />}
