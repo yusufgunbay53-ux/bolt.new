@@ -8,8 +8,10 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig((config) => {
   return {
+    base: './',
     build: {
       target: 'esnext',
+      outDir: 'dist',
     },
     plugins: [
       nodePolyfills({
