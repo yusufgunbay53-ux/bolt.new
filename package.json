@@ -85,6 +85,7 @@
     "is-ci": "^3.0.1",
     "node-fetch": "^3.3.2",
     "prettier": "^3.3.2",
+    "sass-embedded": "^1.99.0",
     "typescript": "^5.5.2",
     "unified": "^11.0.5",
     "unocss": "^0.61.3",
@@ -99,4 +100,3 @@
     "@typescript-eslint/utils": "^8.0.0-alpha.30"
   }
 }
-
