@@ -21,15 +21,21 @@ export type Messages = Message[];
 
 export type StreamingOptions = Omit<Parameters<typeof _streamText>[0], 'model'>;
 
-export function streamText(messages: Messages, env: Env, options?: StreamingOptions) {
+export function streamText(messages: Messages, options?: StreamingOptions) {
+  const apiKey = getAPIKey();
+
+  if (!apiKey) {
+    throw new Error('ANTHROPIC_API_KEY is not set');
+  }
+
   return _streamText({
-    model: getAnthropicModel(getAPIKey(env)),
+    model: getAnthropicModel(apiKey),
     system: getSystemPrompt(),
     maxTokens: MAX_TOKENS,
     headers: {
       'anthropic-beta': 'max-tokens-3-5-sonnet-2024-07-15',
     },
-    messages: convertToCoreMessages(messages),
+    messages: convertToCoreMessages(messages as any),
     ...options,
   });
 }
